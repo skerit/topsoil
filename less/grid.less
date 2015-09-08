@@ -20,6 +20,14 @@
 	flex: @type;
 }
 
+.flexClear(@order) {
+	&:after {
+		.flexChild(1 0 100%);
+		order: @order;
+		content: '';
+	}
+}
+
 // Create a flexbox row
 .row(@alignment: space-between, @wrap: wrap) {
 	.flexParent(row, @alignment, @wrap);
